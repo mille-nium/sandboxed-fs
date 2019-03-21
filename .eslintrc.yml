@@ -1,6 +1,8 @@
 env:
   es6: true
   node: true
+parserOptions:
+  ecmaVersion: 8
 extends:
   - eslint:recommended
   - plugin:prettier/recommended
@@ -104,7 +106,9 @@ rules:
     - always
   space-before-function-paren:
     - error
-    - never
+    - anonymous: never
+      named: never
+      asyncArrow: always
   space-in-parens:
     - error
     - never
